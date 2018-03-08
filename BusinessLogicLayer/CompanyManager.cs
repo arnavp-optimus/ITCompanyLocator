@@ -10,9 +10,10 @@ namespace CompLocator.BusinessLogicLayer
 {
 	public class CompanyManager
 	{
+		const string name = "name";
 
 		/// <summary>
-		/// method for XMLParsing
+		/// Method for XMLParsing
 		/// </summary>
 		/// <param name="responseString"></param>
 		private CompanyDetails XmlParse(string responseString)
@@ -21,7 +22,7 @@ namespace CompLocator.BusinessLogicLayer
 
 			responseDocument.LoadXml(responseString);
 
-			XmlNodeList nameList = responseDocument.GetElementsByTagName("name");
+			XmlNodeList nameList = responseDocument.GetElementsByTagName(name);
 			XmlNodeList addressList = responseDocument.GetElementsByTagName("formatted_address");
 			var companyDetails = new CompanyDetails
 			{

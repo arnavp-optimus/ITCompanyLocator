@@ -1,0 +1,12 @@
+﻿@model List<CompLocatorUI.Models.CompanyModel>
+@{
+	ViewBag.Title = "DisplayOutput";
+}
+
+<h2>DisplayOutput</h2>
+<ul>
+	@foreach (var value in Model)
+	{
+	<li> Name:  @value.Name   Address : @value.Address </li>
+	}
+</ul>

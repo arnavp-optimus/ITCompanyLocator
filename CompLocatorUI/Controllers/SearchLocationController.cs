@@ -10,18 +10,18 @@ namespace CompLocatorUI.Controllers
 {
 	public class SearchLocationController : Controller
 	{
-		// GET: SearchLocation
+		
 		public ActionResult EnterLocation()
 		{
 			return View();
 		}
 
-		[HttpGet]
-		public ActionResult GetCompanies(String location)
+		[HttpPost]
+		public ActionResult EnterLocation(string textbox)
 		{
 
 			CompanyManager companymanager = new CompanyManager(); // creating object of CompanyManager Class which is in BusinessLogicLayer
-			var companyEntities = companymanager.GetCompanies(location);
+			var companyEntities = companymanager.GetCompanies(textbox);
 
 			//convert to companyModel list
 			var selectedCompanies = new List<CompanyModel>();
@@ -35,7 +35,8 @@ namespace CompLocatorUI.Controllers
 				selectedCompanies.Add(company);
 			}
 
-			return View(selectedCompanies);
+			return View("DisplayOutput",selectedCompanies);
 		}
+
 	}
 }

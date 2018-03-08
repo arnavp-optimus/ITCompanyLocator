@@ -12,7 +12,7 @@ namespace CompLocator.DataAccessLayer
 	//
     public class CallApiEntity
     {
-        string url = string.Empty;
+
 	    HttpClient client = new HttpClient();
 		string responseString = null;
 		 
@@ -24,7 +24,7 @@ namespace CompLocator.DataAccessLayer
 		{
 			var myTask = Task.Run (async () =>
 			{
-				url = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query=it+companies+in+"+location+"&key=AIzaSyC_SL4Eig9Gc49GlcLl7wqWMp0KYqA6-k0";
+				string url = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query=it+companies+in+"+location+"&key=AIzaSyC_SL4Eig9Gc49GlcLl7wqWMp0KYqA6-k0"; // use constant
 				HttpResponseMessage response = await client.GetAsync(url);
 				responseString = await response.Content.ReadAsStringAsync();
 			});
