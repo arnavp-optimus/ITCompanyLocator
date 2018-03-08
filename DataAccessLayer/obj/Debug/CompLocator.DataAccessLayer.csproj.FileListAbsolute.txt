@@ -1,0 +1,6 @@
+c:\users\arnav.parashar\source\repos\CompLocator\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+c:\users\arnav.parashar\source\repos\CompLocator\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+c:\users\arnav.parashar\source\repos\CompLocator\DataAccessLayer\obj\Debug\CompLocator.DataAccessLayer.csprojResolveAssemblyReference.cache
+c:\users\arnav.parashar\source\repos\CompLocator\DataAccessLayer\obj\Debug\CompLocator.DataAccessLayer.csproj.CoreCompileInputs.cache
+c:\users\arnav.parashar\source\repos\CompLocator\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+c:\users\arnav.parashar\source\repos\CompLocator\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

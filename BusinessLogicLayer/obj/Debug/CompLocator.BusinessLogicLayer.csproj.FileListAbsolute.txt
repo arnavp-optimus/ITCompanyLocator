@@ -1,0 +1,8 @@
+c:\users\arnav.parashar\source\repos\CompLocator\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+c:\users\arnav.parashar\source\repos\CompLocator\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+c:\users\arnav.parashar\source\repos\CompLocator\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+c:\users\arnav.parashar\source\repos\CompLocator\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+c:\users\arnav.parashar\source\repos\CompLocator\BusinessLogicLayer\obj\Debug\CompLocator.BusinessLogicLayer.csprojResolveAssemblyReference.cache
+c:\users\arnav.parashar\source\repos\CompLocator\BusinessLogicLayer\obj\Debug\CompLocator.BusinessLogicLayer.csproj.CoreCompileInputs.cache
+c:\users\arnav.parashar\source\repos\CompLocator\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+c:\users\arnav.parashar\source\repos\CompLocator\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
