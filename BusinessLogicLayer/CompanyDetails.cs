@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CompLocator.BusinessLogicLayer
 {
-	/// <summary>
-	/// 
-	/// </summary>
+	//Model Containing get set properties Names and Addresses
 	public class CompanyDetails
 	{
 		public List<string> Names { get; set; }

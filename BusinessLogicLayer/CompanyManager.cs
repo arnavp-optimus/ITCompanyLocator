@@ -1,17 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Xml;
 using CompLocator.DataAccessLayer;
 
 namespace CompLocator.BusinessLogicLayer
 {
+	//This Class contains method for XMLParsing
 	public class CompanyManager
 	{
-		const string name = "name";
+		#region Private Variables
 
+		private const string _mCname = "name";
+		private const string _mCaddress = "formatted_address";
+		private string _nextPageToken = "next_page_token";
+		private string _token = string.Empty;
+
+		#endregion
+
+		#region Private Methods
 		/// <summary>
 		/// Method for XMLParsing
 		/// </summary>
@@ -22,12 +27,22 @@ namespace CompLocator.BusinessLogicLayer
 
 			responseDocument.LoadXml(responseString);
 
-			XmlNodeList nameList = responseDocument.GetElementsByTagName(name);
-			XmlNodeList addressList = responseDocument.GetElementsByTagName("formatted_address");
+			XmlNodeList nameList = responseDocument.GetElementsByTagName(_mCname);
+			XmlNodeList addressList = responseDocument.GetElementsByTagName(_mCaddress);
+			XmlNodeList pageToken = responseDocument.GetElementsByTagName(_nextPageToken);
+			if (pageToken.Count != 0)
+			{
+				_token = pageToken[pageToken.Count - 1].InnerText;
+			}
+			else
+			{
+				_token = null;
+			}
+
 			var companyDetails = new CompanyDetails
 			{
 				Names = new List<string>(),
-				Addresses = new List<string>()
+				Addresses = new List<string>(),
 			};
 
 			foreach (XmlNode CompName in nameList)
@@ -42,25 +57,37 @@ namespace CompLocator.BusinessLogicLayer
 			return companyDetails;
 
 		}
+		#endregion
 
+		#region Public Methods
 		/// <summary>
-		/// 
+		/// Method for validation and Calling GetResponseViaGoogleApi
 		/// </summary>
 		/// <param name="location"></param>
-		/// <returns></returns>
+		/// <returns>response</returns>
 		public CompanyDetails GetCompanies(string location)
 		{
-			//1. Location verification(empty,null, special character) result
+			var companies = new CompanyDetails
+			{
+				Names = new List<string>(),
+				Addresses = new List<string>(),
+			};
 			if (location.Equals(null))
 			{
 				return null;
 			}
 
-			//2. Data acess method call
 			CallApiEntity callApiObject = new CallApiEntity();
-			string response = callApiObject.GetResponseViaGoogleApi(location);
-			return XmlParse(response);
+			while (_token != null)
+			{
+				string response = callApiObject.GetResponseViaGoogleApi(location, _token);
+				var resultCompanies = XmlParse(response);
+				companies.Names.AddRange(resultCompanies.Names);
+				companies.Addresses.AddRange(resultCompanies.Addresses);
+			}
+			return companies;
 		}
+		#endregion
 
 
 	}
