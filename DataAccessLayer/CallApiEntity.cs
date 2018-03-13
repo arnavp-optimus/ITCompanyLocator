@@ -13,7 +13,7 @@ namespace CompLocator.DataAccessLayer
 		string _mResponseString = null;
 		const string _mPlacesApi = "https://maps.googleapis.com/maps/api/place/textsearch/xml?";
 		const string _mSearchQuery = "query=it+companies+in+";
-		const string _mKey = "&key=AIzaSyC_SL4Eig9Gc49GlcLl7wqWMp0KYqA6-k0";
+		const string _mKey = "&key=AIzaSyA-nPuYcF-IFNIXUcZFmFa_GBjJ--mhV70";
 		const string _nextPageToken = "&hasNextPage=true & nextPage()=true&pagetoken=";
 
 		#endregion
@@ -44,7 +44,6 @@ namespace CompLocator.DataAccessLayer
 		   _mResponseString = await response.Content.ReadAsStringAsync();
 	   });
 			hittingApi.Wait();
-			Thread.Sleep(2000);
 			return _mResponseString;
 		}
 		#endregion

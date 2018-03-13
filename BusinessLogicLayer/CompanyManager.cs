@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using System.Xml;
 using CompLocator.DataAccessLayer;
 
@@ -30,6 +31,8 @@ namespace CompLocator.BusinessLogicLayer
 			XmlNodeList nameList = responseDocument.GetElementsByTagName(_mCname);
 			XmlNodeList addressList = responseDocument.GetElementsByTagName(_mCaddress);
 			XmlNodeList pageToken = responseDocument.GetElementsByTagName(_nextPageToken);
+			Thread.Sleep(3000);
+
 			if (pageToken.Count != 0)
 			{
 				_token = pageToken[pageToken.Count - 1].InnerText;

@@ -1,6 +1,6 @@
 C:\Users\Arnav.Parashar\source\repos\CompLocator\DataAccessLayer\bin\Release\DataAccessLayer.dll
 C:\Users\Arnav.Parashar\source\repos\CompLocator\DataAccessLayer\bin\Release\DataAccessLayer.pdb
+C:\Users\Arnav.Parashar\source\repos\CompLocator\DataAccessLayer\obj\Release\CompLocator.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Arnav.Parashar\source\repos\CompLocator\DataAccessLayer\obj\Release\CompLocator.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Arnav.Parashar\source\repos\CompLocator\DataAccessLayer\obj\Release\DataAccessLayer.dll
 C:\Users\Arnav.Parashar\source\repos\CompLocator\DataAccessLayer\obj\Release\DataAccessLayer.pdb
-C:\Users\Arnav.Parashar\source\repos\CompLocator\DataAccessLayer\obj\Release\CompLocator.DataAccessLayer.csprojResolveAssemblyReference.cache
